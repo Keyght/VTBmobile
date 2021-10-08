@@ -6,6 +6,7 @@ public static class TargetMoney
 {
     public static int targetMoney;
     public static int curentMoney;
+    public static int allMoney;
     public static float inflation;
     
     public static void setMoney(int curent,int target, float _inflation)
