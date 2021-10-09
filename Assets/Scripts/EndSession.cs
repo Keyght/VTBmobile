@@ -15,6 +15,8 @@ public class EndSession : MonoBehaviour
     
 
     public float timerValue = 0f;
+   // public float month;
+    //public float years;
 
     public bool isGameFinished;
     public Text TimerText;
@@ -46,6 +48,8 @@ public class EndSession : MonoBehaviour
             FinishCanvas.SetActive(true);
             TimerText = GameObject.Find("TimerText").GetComponent<Text>();
             TextCounter = GameObject.Find("TextCounter").GetComponent<Text>();
+            //month = timerValue % 12;
+            //years = timerValue / 12;
             TimerText.text = "Время прохождения: " + FormatTime(timerValue);
             TextCounter.text = "Количество заработанных монет: " + (PlayerPrefs.GetInt("Money")-previos_money);
             StartCoroutine(OpenInterfaceScreen(3));
