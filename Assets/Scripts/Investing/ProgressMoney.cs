@@ -18,6 +18,7 @@ public class ProgressMoney : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (TargetMoney.targetMoney<100)TargetMoney.setMoney(curentMoney, targetMoney, inflation);
         slider = GetComponent<Slider>();
 
     }
