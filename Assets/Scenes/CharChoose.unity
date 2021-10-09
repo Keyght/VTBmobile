@@ -375,6 +375,7 @@ MonoBehaviour:
   begin: {fileID: 1098806995}
   women_obj: {fileID: 686046404}
   men_obj: {fileID: 808672633}
+  namee: {fileID: 414984994}
 --- !u!114 &413670105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +478,7 @@ GameObject:
   - component: {fileID: 414984996}
   - component: {fileID: 414984995}
   - component: {fileID: 414984994}
+  - component: {fileID: 414984997}
   m_Layer: 5
   m_Name: InputField
   m_TagString: Untagged
@@ -604,6 +606,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414984992}
   m_CullTransparentMesh: 0
+--- !u!114 &414984997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414984992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23674d04cb0a65048ad34342f4a807b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  women: {fileID: 1543815272}
+  men: {fileID: 413670105}
+  begin: {fileID: 1098806995}
+  women_obj: {fileID: 686046404}
+  men_obj: {fileID: 808672633}
+  namee: {fileID: 414984994}
 --- !u!1 &581845234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1362,7 @@ MonoBehaviour:
   begin: {fileID: 1098806995}
   women_obj: {fileID: 686046404}
   men_obj: {fileID: 808672633}
+  namee: {fileID: 414984994}
 --- !u!114 &1098806995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1740,6 +1761,7 @@ MonoBehaviour:
   begin: {fileID: 1098806995}
   women_obj: {fileID: 686046404}
   men_obj: {fileID: 808672633}
+  namee: {fileID: 414984994}
 --- !u!114 &1543815272
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,11 +14,14 @@ public class ScriptForCharSelect : MonoBehaviour
     public GameObject women_obj;
     public GameObject men_obj;
 
+    public InputField namee;
+
     // Start is called before the first frame update
     void Start()
     {
         int num;
         bool isNum = int.TryParse(PlayerPrefs.GetString("was_begin"), out num);
+        //namee = GetComponent<InputField>();
         if (!isNum)
         {
             PlayerPrefs.SetInt("was_begin", 0);
@@ -58,6 +61,11 @@ public class ScriptForCharSelect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (namee.text!="")
+        {
+            PlayerPrefs.SetString("name", namee.text);
+            //Debug.Log(PlayerPrefs.GetString("name"));
+        }
         
     }
 }
