@@ -863,11 +863,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 963006277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6e3c8aa139074b4eb597df3a9cda0fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f54c68da59ea6a4883f89bc5e6566a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  addSpeed: 0
+  speed: 40
 --- !u!65 &963006281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1728,7 +1727,7 @@ MonoBehaviour:
   TextCounter: {fileID: 0}
   previos_money: 0
   moneyGet_K: 200
---- !u!114 &2039598688
+--- !u!114 &2039598687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1737,11 +1736,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2039598685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6e3c8aa139074b4eb597df3a9cda0fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f54c68da59ea6a4883f89bc5e6566a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  addSpeed: 0
 --- !u!65 &2039598689
 BoxCollider:
   m_ObjectHideFlags: 0
