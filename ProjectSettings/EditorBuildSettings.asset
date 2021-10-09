@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/CharChoose.unity
+    guid: f5f4a5a499ea87940a5df557c88f3b6a
+  - enabled: 1
     path: Assets/Scenes/FirstMenu.unity
     guid: 3d3169748a3aabf45956d3a6d3c0d736
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/SceneForWork.unity
     guid: bfa0a2f1a84d7a4489d75a6b26422b60
+  - enabled: 1
+    path: Assets/Scenes/ForCity.unity
+    guid: 9df7010491ea5204491978a4a217d27c
   - enabled: 1
     path: Assets/Scenes/InvestingWindow.unity
     guid: 6a1a15db20d3f51408f5602b956f6228
