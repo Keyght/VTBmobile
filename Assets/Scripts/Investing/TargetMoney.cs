@@ -28,6 +28,7 @@ public static class TargetMoney
         public void Close()
         {
             cash = Mathf.CeilToInt(cash + sum);
+            
         }
     }
 
@@ -43,10 +44,11 @@ public static class TargetMoney
         public float curentCost;
         public int risk;// 1/100000
 
-        public Bonds(int _nominal,int _percent, int _med_percent, int _period,int _length,int _risk)
+        public Bonds(int _nominal,float _percent, int _med_percent, int _period,int _length,int _risk)
         {
             nominal = _nominal;
-            cupon = Mathf.CeilToInt( nominal * _percent / _period);
+            curentCost = nominal;
+            cupon = Mathf.CeilToInt( nominal * _percent * _period/12);
             period = _period;
             curenPeriod = period;
             lengthBonds = _length;
@@ -70,19 +72,30 @@ public static class TargetMoney
                 
                 
             }
+            ChangeCost();
         }
 
         void ChangeCost()
         {
             float min, max;
-            min = (lengthBonds - startLengthBonds / 2)/period*cupon+(cupon-medianCupon)* lengthBonds/period- Random.Range(0.0f, 0.1f)*nominal;
-            max = (lengthBonds - startLengthBonds / 2)/period*cupon+(cupon-medianCupon)* lengthBonds/period+ Random.Range(0.0f, 0.1f)*nominal;
-            curentCost = Mathf.Clamp(curentCost + Random.Range(min, max), nominal *0.8f, nominal * 1.2f);
+            min = (lengthBonds - startLengthBonds )/period*cupon/20+(cupon-medianCupon)* lengthBonds/period/20- Random.Range(0.1f, 0.2f)*nominal;
+            max = (lengthBonds - startLengthBonds )/period*cupon/20+(cupon-medianCupon)* lengthBonds/period/20+ Random.Range(0.0f, 0.1f)*nominal;
+            Debug.Log(min + " " + max);
+            float trash = curentCost + Random.Range(min, max);
+            trash= Mathf.Clamp(trash, nominal * 0.8f, nominal * 1.2f);
+            Debug.Log(trash);
+            curentCost = trash;
+            Debug.Log(curentCost);
         }
 
         public void Close()
         {
             cash = cash + nominal;
+        }
+        public void Sell()
+        {
+            curentMoney = curentMoney - nominal + Mathf.RoundToInt(curentCost);
+            cash = cash +Mathf.RoundToInt( curentCost);
         }
     }
 
@@ -106,6 +119,7 @@ public static class TargetMoney
     public static void addInflation()
     {
         targetMoney = targetMoney + Mathf.CeilToInt(targetMoney * inflation);
+       ;
     }
     public static void addMoney(int money)
     {
@@ -118,12 +132,20 @@ public static class TargetMoney
         Debug.Log(cash + " cash " + contributions.Count);
         foreach (var contrib in contributions)
         {
-            Debug.Log(contrib.percent + " cash " + contrib.lengthContributs+" "+contrib.sum);
             contrib.NewMounth();
             if (contrib.lengthContributs<=0)
             {
                 contrib.Close();
                 contributions.Remove(contrib);
+            }
+        }
+        foreach (var bond in bonds)
+        {
+            bond.NewMounth();
+            if (bond.lengthBonds <= 0)
+            {
+                bond.Close();
+                bonds.Remove(bond);
             }
         }
     }
@@ -134,9 +156,62 @@ public static class TargetMoney
         cash = cash - _sum;
     }
 
-    public static void NewBonds(int _nominal, int _percent, int _med_percent, int _period, int _length, int _risk)
+    public static void NewBonds(int _nominal, float _percent, int _med_percent, int _period, int _length, int _risk)
     {
         bonds.Add(new Bonds( _nominal,  _percent,  _med_percent,  _period,  _length,  _risk));
         cash = cash - _nominal;
+    }
+    public static void SellBond(int _period)
+    {
+        foreach (var bond in bonds)
+        {
+            if (bond.period == _period)
+            {
+                bond.Sell();
+                bonds.Remove(bond);
+                break;
+            }
+        }
+        
+    }
+
+    public static int GetBond(int _period)
+    {
+        int sum=0;
+        foreach (var bond in bonds)
+        {
+            if (bond.period == _period)
+            {
+                sum = sum + bond.cupon;
+            }
+        }
+        return sum;
+    }
+    public static int GetBondCount(int _period)
+    {
+        int sum = 0;
+        foreach (var bond in bonds)
+        {
+            if (bond.period == _period)
+            {
+                sum = sum + 1;
+                Debug.Log(sum + " " + bond.curentCost);
+            }
+        }
+        return sum;
+    }
+    public static int GetBondCost(int _period)
+    {
+        int sum = 0;
+        foreach (var bond in bonds)
+        {
+            if (bond.period == _period)
+            {
+                sum =Mathf.RoundToInt( bond.curentCost);
+                Debug.Log(sum+" "+ bond.curentCost);
+                break;
+            }
+        }
+        return sum;
     }
 }

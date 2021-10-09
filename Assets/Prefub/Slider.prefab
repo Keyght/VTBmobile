@@ -445,8 +445,9 @@ MonoBehaviour:
   percent: {fileID: 5987720214124733538}
   curentM: {fileID: 5987720213364916297}
   targetM: {fileID: 5987720213015523618}
+  cashM: {fileID: 1602470860112324634}
   targetMoney: 10000
-  curentMoney: 200
+  curentMoney: 2500
   inflation: 0.05
 --- !u!1 &5987720213364916279
 GameObject:

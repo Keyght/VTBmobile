@@ -44,6 +44,7 @@ public class contributsStonksCount : MonoBehaviour
         else
         {
             int stonksInt = 0;
+            Debug.Log(float.Parse(sum.text)+"AASS"+ lengthContributs);
             stonksInt = Mathf.CeilToInt(Percent(float.Parse(sum.text), lengthContributs));
             stonks.text = "Доход " + (stonksInt - int.Parse(sum.text));
             stonks.color = colorCorrect;
@@ -53,7 +54,7 @@ public class contributsStonksCount : MonoBehaviour
 
     float Percent(float sum,int count)
     {
-        float curentStonk = sum + sum * percent;
+        int curentStonk = Mathf.CeilToInt(sum + sum * percent/12);
         if (count <= 1) return curentStonk;
         else return Percent(curentStonk, count - 1);
     }
