@@ -24,6 +24,7 @@ public class ProgressMoney : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateSlider();
         InputUpdate();
     }
 
@@ -44,6 +45,11 @@ public class ProgressMoney : MonoBehaviour
             TargetMoney.addInflation();
             UpdateSlider();
         }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            TargetMoney.newMounth();
+            UpdateSlider();
+        }
     }
 
     public void UpdateSlider()
@@ -56,5 +62,7 @@ public class ProgressMoney : MonoBehaviour
         percent.text = trash + "%";
         curentM.text = TargetMoney.curentMoney.ToString();
         targetM.text= TargetMoney.targetMoney.ToString();
-}
+    }
+
+    
 }
