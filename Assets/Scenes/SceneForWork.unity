@@ -546,6 +546,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Money5
       objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462121, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -606,8 +611,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: Money5
       objectReference: {fileID: 0}
+    - target: {fileID: 232695787522156420, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: money
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2639eaf45cd212e42b6eee8ef5f33349, type: 3}
+--- !u!1 &590183389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 232695787522156420, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+    type: 3}
+  m_PrefabInstance: {fileID: 992638392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &590183391
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590183389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00730935, y: 0.006951605, z: 0.0006643461}
+  m_Center: {x: 0, y: 1.1641532e-10, z: 0.00033217305}
 --- !u!1 &602879881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 0886e76a0bbad5c49a3eeb984f685705,
@@ -647,7 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e3c8aa139074b4eb597df3a9cda0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 180
+  speed: 360
 --- !u!135 &602879884
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -694,6 +723,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Money4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462121, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
         type: 3}
@@ -755,6 +789,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Money4
       objectReference: {fileID: 0}
+    - target: {fileID: 232695787522156420, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: money
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2639eaf45cd212e42b6eee8ef5f33349, type: 3}
 --- !u!1001 &693566582
@@ -769,10 +808,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Money3
       objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462121, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.67
+      value: 2.89
       objectReference: {fileID: 0}
     - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
         type: 3}
@@ -782,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.42
+      value: -5.6
       objectReference: {fileID: 0}
     - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
         type: 3}
@@ -828,6 +872,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Money3
+      objectReference: {fileID: 0}
+    - target: {fileID: 232695787522156420, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: money
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2639eaf45cd212e42b6eee8ef5f33349, type: 3}
@@ -1083,6 +1132,90 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.00730935, y: 0.006951605, z: 0.0006643461}
   m_Center: {x: 0, y: 1.1641532e-10, z: 0.00033217305}
+--- !u!1001 &992638392
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8078154276607462121, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_Name
+      value: Money1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462121, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.437
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 232695787522156420, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_Name
+      value: Money1
+      objectReference: {fileID: 0}
+    - target: {fileID: 232695787522156420, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: money
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2639eaf45cd212e42b6eee8ef5f33349, type: 3}
 --- !u!1 &1074308781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,6 +1606,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Money2
       objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462121, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1532,6 +1670,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Money2
+      objectReference: {fileID: 0}
+    - target: {fileID: 232695787522156420, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: money
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2639eaf45cd212e42b6eee8ef5f33349, type: 3}
@@ -2119,6 +2262,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Money1
       objectReference: {fileID: 0}
+    - target: {fileID: 8078154276607462121, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8078154276607462118, guid: 2639eaf45cd212e42b6eee8ef5f33349,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2178,6 +2326,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Money1
+      objectReference: {fileID: 0}
+    - target: {fileID: 232695787522156420, guid: 2639eaf45cd212e42b6eee8ef5f33349,
+        type: 3}
+      propertyPath: m_TagString
+      value: money
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2639eaf45cd212e42b6eee8ef5f33349, type: 3}
