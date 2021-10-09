@@ -54,8 +54,9 @@ public class EndSession : MonoBehaviour
         if (collision.gameObject.name.Contains("Money"))
         {
             Debug.Log("Level over");
-            oldmoney = GameObject.Find(collision.gameObject.name);
-            oldmoney.SetActive(false);
+            //oldmoney = GameObject.Find(collision.gameObject.name);
+            //oldmoney.SetActive(false);
+            collision.gameObject.SetActive(false);
             int k = PlayerPrefs.GetInt("Money")+1;
             PlayerPrefs.SetInt("Money", k);
             Debug.Log(PlayerPrefs.GetInt("Money"));
