@@ -12,7 +12,10 @@ public class EndSession : MonoBehaviour
 
 
     public GameObject oldmoney;
-    
+
+    private int moneyCount;
+    private int cureMoneyCount;
+    private GameObject[] moneys;
 
     public float timerValue = 0f;
    // public float month;
@@ -41,6 +44,9 @@ public class EndSession : MonoBehaviour
         {
             previos_money = PlayerPrefs.GetInt("Money");
         }
+        moneys = GameObject.FindGameObjectsWithTag("money");
+        moneyCount = moneys.Length;
+        cureMoneyCount = moneyCount;
     }
     public void OnCollisionEnter(Collision collision)
     {
@@ -66,6 +72,7 @@ public class EndSession : MonoBehaviour
             int k = PlayerPrefs.GetInt("Money")+1;
             PlayerPrefs.SetInt("Money", k);
             Debug.Log(PlayerPrefs.GetInt("Money"));
+            AddSpeed();
         }
         if (collision.gameObject.name == "EndCylindr")
         {
@@ -116,5 +123,19 @@ public class EndSession : MonoBehaviour
         TargetMoney.curentMoney = TargetMoney.curentMoney + PlayerPrefs.GetInt("Money") * moneyGet_K;
         TargetMoney.cash = TargetMoney.cash + PlayerPrefs.GetInt("Money") * moneyGet_K;
         TargetMoney.addInflation();
+    }
+
+
+    void AddSpeed()
+    {
+        cureMoneyCount = cureMoneyCount - 1;
+        if (cureMoneyCount <= 0)
+        {
+            cureMoneyCount = moneyCount;
+            foreach (var money in moneys)
+            {
+                money.SetActive(true);
+            }
+        }
     }
 }
