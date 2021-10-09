@@ -663,7 +663,7 @@ MonoBehaviour:
   TimerText: {fileID: 0}
   TextCounter: {fileID: 0}
   previos_money: 0
-  moneyGet_K: 200
+  moneyGet_K: 100
 --- !u!114 &602879883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,6 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 360
+  addSpeed: 36
 --- !u!135 &602879884
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -684,7 +685,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602879881}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 902a5b25b66a2144280f3e692754dc22, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
