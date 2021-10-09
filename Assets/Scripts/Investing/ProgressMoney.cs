@@ -10,6 +10,7 @@ public class ProgressMoney : MonoBehaviour
     public Text percent;
     public Text curentM;
     public Text targetM;
+    public Text cashM;
     public int targetMoney;
     public int curentMoney;
     public float inflation;
@@ -62,6 +63,7 @@ public class ProgressMoney : MonoBehaviour
         percent.text = trash + "%";
         curentM.text = TargetMoney.curentMoney.ToString();
         targetM.text= TargetMoney.targetMoney.ToString();
+        cashM.text= TargetMoney.cash.ToString();
     }
 
     
