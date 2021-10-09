@@ -5,6 +5,7 @@ using UnityEngine;
 public class MooveTheBall : MonoBehaviour
 {
     public float speed;
+    public float addSpeed;
 
     void FixedUpdate()
     {
@@ -27,5 +28,10 @@ public class MooveTheBall : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         GetComponent<Rigidbody>().AddForce(movement * speed * Time.deltaTime);
+    }
+
+    public void AddSpeed()
+    {
+        speed = speed + addSpeed;
     }
 }

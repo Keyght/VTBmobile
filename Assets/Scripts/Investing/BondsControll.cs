@@ -29,6 +29,7 @@ public class BondsControll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        percent = Random.Range(minPercent, maxPercent);
         UpdateText();
     }
 
@@ -55,7 +56,7 @@ public class BondsControll : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            percent = Random.Range(minPercent, maxPercent);
+           
             UpdateText();
 
         }
