@@ -634,6 +634,7 @@ MonoBehaviour:
   TimerText: {fileID: 0}
   TextCounter: {fileID: 0}
   previos_money: 0
+  moneyGet_K: 200
 --- !u!114 &602879883
 MonoBehaviour:
   m_ObjectHideFlags: 0

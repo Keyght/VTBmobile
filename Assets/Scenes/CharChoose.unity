@@ -382,7 +382,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 248617175}
-        m_MethodName: select_men
+        m_MethodName: select_work
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -404,8 +404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23674d04cb0a65048ad34342f4a807b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  women: {fileID: 662855932}
-  men: {fileID: 248617174}
+  women: {fileID: 1543815272}
+  men: {fileID: 413670105}
   begin: {fileID: 1098806995}
   work: {fileID: 248617174}
   notwork: {fileID: 662855932}
@@ -600,8 +600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23674d04cb0a65048ad34342f4a807b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  women: {fileID: 662855932}
-  men: {fileID: 248617174}
+  women: {fileID: 1543815272}
+  men: {fileID: 413670105}
   begin: {fileID: 1098806995}
   work: {fileID: 248617174}
   notwork: {fileID: 662855932}
@@ -853,8 +853,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23674d04cb0a65048ad34342f4a807b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  women: {fileID: 662855932}
-  men: {fileID: 248617174}
+  women: {fileID: 1543815272}
+  men: {fileID: 413670105}
   begin: {fileID: 1098806995}
   work: {fileID: 248617174}
   notwork: {fileID: 662855932}
@@ -1084,8 +1084,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23674d04cb0a65048ad34342f4a807b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  women: {fileID: 662855932}
-  men: {fileID: 248617174}
+  women: {fileID: 1543815272}
+  men: {fileID: 413670105}
   begin: {fileID: 1098806995}
   work: {fileID: 248617174}
   notwork: {fileID: 662855932}
@@ -1139,7 +1139,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 662855931}
-        m_MethodName: select_women
+        m_MethodName: select_notwork
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1759,7 +1759,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085719029}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 16.8}
+  m_LocalPosition: {x: 0, y: 0, z: 15.2}
   m_LocalScale: {x: 0.016029757, y: 0.016029757, z: 0.016029757}
   m_Children:
   - {fileID: 922671161}
@@ -1846,7 +1846,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1093887538}
-        m_MethodName: select_men
+        m_MethodName: select_low
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1868,8 +1868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23674d04cb0a65048ad34342f4a807b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  women: {fileID: 662855932}
-  men: {fileID: 248617174}
+  women: {fileID: 1543815272}
+  men: {fileID: 413670105}
   begin: {fileID: 1098806995}
   work: {fileID: 248617174}
   notwork: {fileID: 662855932}
@@ -1987,8 +1987,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23674d04cb0a65048ad34342f4a807b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  women: {fileID: 662855932}
-  men: {fileID: 248617174}
+  women: {fileID: 1543815272}
+  men: {fileID: 413670105}
   begin: {fileID: 1098806995}
   work: {fileID: 248617174}
   notwork: {fileID: 662855932}
@@ -2468,8 +2468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23674d04cb0a65048ad34342f4a807b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  women: {fileID: 662855932}
-  men: {fileID: 248617174}
+  women: {fileID: 1543815272}
+  men: {fileID: 413670105}
   begin: {fileID: 1098806995}
   work: {fileID: 248617174}
   notwork: {fileID: 662855932}
@@ -2523,7 +2523,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1518126250}
-        m_MethodName: select_women
+        m_MethodName: select_high
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2698,8 +2698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23674d04cb0a65048ad34342f4a807b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  women: {fileID: 662855932}
-  men: {fileID: 248617174}
+  women: {fileID: 1543815272}
+  men: {fileID: 413670105}
   begin: {fileID: 1098806995}
   work: {fileID: 248617174}
   notwork: {fileID: 662855932}
@@ -3095,7 +3095,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1905797055}
-        m_MethodName: select_women
+        m_MethodName: select_medium
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3117,8 +3117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23674d04cb0a65048ad34342f4a807b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  women: {fileID: 662855932}
-  men: {fileID: 248617174}
+  women: {fileID: 1543815272}
+  men: {fileID: 413670105}
   begin: {fileID: 1098806995}
   work: {fileID: 248617174}
   notwork: {fileID: 662855932}
