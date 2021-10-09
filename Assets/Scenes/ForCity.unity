@@ -955,7 +955,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e3c8aa139074b4eb597df3a9cda0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 10
+  addSpeed: 0
 --- !u!65 &339488722
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1009,6 +1010,7 @@ MonoBehaviour:
   TimerText: {fileID: 0}
   TextCounter: {fileID: 0}
   previos_money: 0
+  moneyGet_K: 200
 --- !u!1 &387402431 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 232695787522156420, guid: 2639eaf45cd212e42b6eee8ef5f33349,
@@ -2623,7 +2625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e3c8aa139074b4eb597df3a9cda0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 10
+  addSpeed: 0
 --- !u!65 &1137772314
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2673,6 +2676,7 @@ MonoBehaviour:
   TimerText: {fileID: 0}
   TextCounter: {fileID: 0}
   previos_money: 0
+  moneyGet_K: 200
 --- !u!1 &1174955023
 GameObject:
   m_ObjectHideFlags: 0
@@ -3545,6 +3549,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 79171dff6f01f24479e228714ebccf49,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4c76d9ffe80c6394286c73319c5a69eb, type: 2}
     - target: {fileID: -4216859302048453862, guid: 79171dff6f01f24479e228714ebccf49,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3615,11 +3624,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.0048634643
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 79171dff6f01f24479e228714ebccf49,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 4c76d9ffe80c6394286c73319c5a69eb, type: 2}
     - target: {fileID: -3953671887550446343, guid: 79171dff6f01f24479e228714ebccf49,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
