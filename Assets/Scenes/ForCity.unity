@@ -213,6 +213,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.0048634643
       objectReference: {fileID: 0}
+    - target: {fileID: 6301103563578243786, guid: a6aef9f5d12e0aa45a5e4145ec10973a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b67ce2686d0e8344fa29cc0ea214923d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6aef9f5d12e0aa45a5e4145ec10973a, type: 3}
 --- !u!1001 &319263501
@@ -1233,6 +1238,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlowRunGirl
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 79171dff6f01f24479e228714ebccf49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 79171dff6f01f24479e228714ebccf49,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1308,6 +1318,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 4c76d9ffe80c6394286c73319c5a69eb, type: 2}
+    - target: {fileID: -3953671887550446343, guid: 79171dff6f01f24479e228714ebccf49,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b67ce2686d0e8344fa29cc0ea214923d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79171dff6f01f24479e228714ebccf49, type: 3}
 --- !u!1 &1954180843
