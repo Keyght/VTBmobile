@@ -119,7 +119,9 @@ public static class TargetMoney
     public static void addInflation()
     {
         targetMoney = targetMoney + Mathf.CeilToInt(targetMoney * inflation);
-       ;
+        newMounth();
+
+
     }
     public static void addMoney(int money)
     {

@@ -21,6 +21,8 @@ public class EndSession : MonoBehaviour
     public Text TextCounter;
     public int previos_money;
 
+    public int moneyGet_K=200;
+
     void Update()
     {
         UpdateTimer();
@@ -77,8 +79,11 @@ public class EndSession : MonoBehaviour
     }
     IEnumerator OpenInterfaceScreen(float time)
     {
+        
         yield return new WaitForSeconds(time);
+
         SceneManager.LoadScene("FirstMenu");
+        AddMoney();
     }
 
     void UpdateTimer()
@@ -100,5 +105,12 @@ public class EndSession : MonoBehaviour
             return "0" + n.ToString();
         else
             return n.ToString();
+    }
+
+    void AddMoney()
+    {
+        TargetMoney.curentMoney = TargetMoney.curentMoney + PlayerPrefs.GetInt("Money") * moneyGet_K;
+        TargetMoney.cash = TargetMoney.cash + PlayerPrefs.GetInt("Money") * moneyGet_K;
+        TargetMoney.addInflation();
     }
 }
