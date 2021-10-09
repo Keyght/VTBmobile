@@ -128,6 +128,7 @@ public class EndSession : MonoBehaviour
 
     void AddSpeed()
     {
+        GetComponent<MooveTheBall>().AddSpeed();
         cureMoneyCount = cureMoneyCount - 1;
         if (cureMoneyCount <= 0)
         {
@@ -136,6 +137,7 @@ public class EndSession : MonoBehaviour
             {
                 money.SetActive(true);
             }
+            GetComponent<Collider>().material.bounciness = GetComponent<Collider>().material.bounciness + 0.1f;
         }
     }
 }
