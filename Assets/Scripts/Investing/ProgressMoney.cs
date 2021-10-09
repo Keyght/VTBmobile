@@ -62,9 +62,9 @@ public class ProgressMoney : MonoBehaviour
         trash = Mathf.RoundToInt(slider.value * 1000);
         trash = trash / 10;
         percent.text = trash + "%";
-        curentM.text = TargetMoney.curentMoney.ToString();
-        targetM.text= TargetMoney.targetMoney.ToString();
-        cashM.text= TargetMoney.cash.ToString();
+        curentM.text = "Активы: \n"+ TargetMoney.curentMoney.ToString();
+        targetM.text= "Цель: \n" + TargetMoney.targetMoney.ToString();
+        cashM.text= "Наличка: " + TargetMoney.cash.ToString();
     }
 
     
