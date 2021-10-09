@@ -6,6 +6,7 @@ public static class TargetMoney
 {
     public static int targetMoney;
     public static int curentMoney;
+    public static int cash;
     public static int allMoney;
     public static float inflation;
     
