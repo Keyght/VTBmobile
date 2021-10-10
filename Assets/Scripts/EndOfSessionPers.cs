@@ -73,6 +73,17 @@ public class EndOfSessionPers : MonoBehaviour
             int k = PlayerPrefs.GetInt("Money") + 1;
             PlayerPrefs.SetInt("Money", k);
             Debug.Log(PlayerPrefs.GetInt("Money"));
+            cureMoneyCount = cureMoneyCount - 1;
+            if (cureMoneyCount <= 0)
+            {
+                cureMoneyCount = moneyCount;
+                foreach (var money in moneys)
+                {
+                    money.SetActive(true);
+                }
+               
+            }
+
         }
         if (collision.gameObject.name == "EndCylindr")
         {
