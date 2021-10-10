@@ -2602,7 +2602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a35a74022ffd9914388d95c70f5b543d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: SceneForWork
+  sceneToLoad: CityTest
 --- !u!114 &1407412039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3263,7 +3263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a35a74022ffd9914388d95c70f5b543d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: CityTest
+  sceneToLoad: SceneForWork
 --- !u!114 &1992376266
 MonoBehaviour:
   m_ObjectHideFlags: 0
