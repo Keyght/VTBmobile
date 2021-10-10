@@ -70,6 +70,18 @@ public class ScriptForCharSelect : MonoBehaviour
     }
     public void begin_action()
     {
+        if ((PlayerPrefs.GetString("sex")!="women")&& (PlayerPrefs.GetString("sex") != "men"))
+        {
+            PlayerPrefs.SetString("sex", "women");
+        }
+        if ((PlayerPrefs.GetString("type_work") != "work") && (PlayerPrefs.GetString("type_work") != "notwork"))
+        {
+            PlayerPrefs.SetString("type_work", "work");
+        }
+        if ((PlayerPrefs.GetString("type_fee") != "low") && (PlayerPrefs.GetString("type_fee") != "medium") && (PlayerPrefs.GetString("type_fee") != "high"))
+        {
+            PlayerPrefs.SetString("type_fee", "medium");
+        }
         PlayerPrefs.SetInt("was_begin", 1);
         SceneManager.LoadScene("FirstMenu");
     }
