@@ -807,7 +807,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041C\u0438\u043D\u0438-\u0438\u0433\u0440\u0430 1"
+  m_Text: Ball trap
 --- !u!222 &525381995
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2463,7 +2463,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041C\u0438\u043D\u0438-\u0438\u0433\u0440\u0430 2"
+  m_Text: New City
 --- !u!222 &1270059723
 CanvasRenderer:
   m_ObjectHideFlags: 0
