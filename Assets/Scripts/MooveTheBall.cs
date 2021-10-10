@@ -32,6 +32,6 @@ public class MooveTheBall : MonoBehaviour
 
     public void AddSpeed()
     {
-        speed = speed + addSpeed;
+        if (speed<600) speed = speed + addSpeed;
     }
 }

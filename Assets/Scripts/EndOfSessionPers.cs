@@ -105,6 +105,7 @@ public class EndOfSessionPers : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         SceneManager.LoadScene("FirstMenu");
+        AddMoney();
     }
 
     void UpdateTimer()
@@ -130,8 +131,10 @@ public class EndOfSessionPers : MonoBehaviour
 
     void AddMoney()
     {
-        TargetMoney.curentMoney = TargetMoney.curentMoney + PlayerPrefs.GetInt("Money") * moneyGet_K;
-        TargetMoney.cash = TargetMoney.cash + PlayerPrefs.GetInt("Money") * moneyGet_K;
+        float addMoney = PlayerPrefs.GetInt("Money") * moneyGet_K;
+        if (PlayerPrefs.HasKey("K_money")) addMoney = addMoney * (PlayerPrefs.GetFloat("K_money"));
+        TargetMoney.curentMoney = TargetMoney.curentMoney + Mathf.RoundToInt(addMoney);
+        TargetMoney.cash = TargetMoney.cash + Mathf.RoundToInt(addMoney);
         TargetMoney.addInflation();
     }
 

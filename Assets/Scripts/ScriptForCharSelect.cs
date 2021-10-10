@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿using Firebase.Database;
+using Firebase.Extensions;
+using Newtonsoft.Json;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -28,6 +31,7 @@ public class ScriptForCharSelect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         int num;
         bool isNum = int.TryParse(PlayerPrefs.GetString("was_begin"), out num);
         //namee = GetComponent<InputField>();
@@ -38,6 +42,8 @@ public class ScriptForCharSelect : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("was_begin")==1)
         {
+            TargetMoney.pD = new PlayerData(PlayerPrefs.GetString("name"), PlayerPrefs.GetString("sex"), PlayerPrefs.GetString("type_work"), PlayerPrefs.GetString("type_fee"));
+
             SceneManager.LoadScene("FirstMenu");
         }
 
@@ -70,20 +76,41 @@ public class ScriptForCharSelect : MonoBehaviour
     }
     public void begin_action()
     {
-        if ((PlayerPrefs.GetString("sex")!="women")&& (PlayerPrefs.GetString("sex") != "men"))
+        if (namee.text != "")
         {
-            PlayerPrefs.SetString("sex", "women");
+            PlayerPrefs.SetString("name", namee.text);
+            //Debug.Log(PlayerPrefs.GetString("name"));
+            if ((PlayerPrefs.GetString("sex") != "women") && (PlayerPrefs.GetString("sex") != "men"))
+            {
+                PlayerPrefs.SetString("sex", "women");
+            }
+            if ((PlayerPrefs.GetString("type_work") != "work") && (PlayerPrefs.GetString("type_work") != "notwork"))
+            {
+                PlayerPrefs.SetString("type_work", "work");
+            }
+            if ((PlayerPrefs.GetString("type_fee") != "low") && (PlayerPrefs.GetString("type_fee") != "medium") && (PlayerPrefs.GetString("type_fee") != "high"))
+            {
+                PlayerPrefs.SetString("type_fee", "medium");
+            }
+            PlayerPrefs.SetInt("was_begin", 1);
+            Json_save();
+            SceneManager.LoadScene("FirstMenu");
         }
-        if ((PlayerPrefs.GetString("type_work") != "work") && (PlayerPrefs.GetString("type_work") != "notwork"))
+        
+    }
+
+    public  void Json_save()
+    {
+        TargetMoney.pD = new PlayerData(PlayerPrefs.GetString("name"),PlayerPrefs.GetString("sex"), PlayerPrefs.GetString("type_work"), PlayerPrefs.GetString("type_fee"));
+        var jsonNewUser = JsonConvert.SerializeObject(TargetMoney.pD);
+        FirebaseDatabase.DefaultInstance.GetReference($"users/{PlayerPrefs.GetString("name")}").SetRawJsonValueAsync(jsonNewUser).ContinueWithOnMainThread(task =>
         {
-            PlayerPrefs.SetString("type_work", "work");
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                print("fail");
+            }
         }
-        if ((PlayerPrefs.GetString("type_fee") != "low") && (PlayerPrefs.GetString("type_fee") != "medium") && (PlayerPrefs.GetString("type_fee") != "high"))
-        {
-            PlayerPrefs.SetString("type_fee", "medium");
-        }
-        PlayerPrefs.SetInt("was_begin", 1);
-        SceneManager.LoadScene("FirstMenu");
+        );
     }
 
     public void select_work()
@@ -100,27 +127,28 @@ public class ScriptForCharSelect : MonoBehaviour
     public void select_low()
     {
         PlayerPrefs.SetString("type_fee", "low");
+        PlayerPrefs.SetFloat("K_money",0.5f);
         Debug.Log(PlayerPrefs.GetString("type_fee"));
     }
     public void select_medium()
     {
         PlayerPrefs.SetString("type_fee", "medium");
+        PlayerPrefs.SetFloat("K_money", 1f);
+
         Debug.Log(PlayerPrefs.GetString("type_fee"));
     }
     public void select_high()
     {
         PlayerPrefs.SetString("type_fee", "high");
+        PlayerPrefs.SetFloat("K_money", 2f);
+
         Debug.Log(PlayerPrefs.GetString("type_fee"));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (namee.text!="")
-        {
-            PlayerPrefs.SetString("name", namee.text);
-            //Debug.Log(PlayerPrefs.GetString("name"));
-        }
+        
         
     }
 }

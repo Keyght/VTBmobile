@@ -1,6 +1,10 @@
-﻿using System.Collections;
+﻿using Firebase.Database;
+using Firebase.Extensions;
+using Newtonsoft.Json;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static PlayerData;
 
 public static class TargetMoney 
 {
@@ -103,11 +107,15 @@ public static class TargetMoney
     public static int targetMoney;
     public static int curentMoney;
     public static int cash;
+    public static int date=0;
     public static int allMoney;
     public static float inflation;
     public static List<Contribution> contributions=new List<Contribution>();
     public static List<Bonds> bonds=new List<Bonds>();
-    
+
+    public static PlayerData pD;
+
+
     public static void setMoney(int curent,int target, float _inflation)
     {
         targetMoney = target;
@@ -118,7 +126,7 @@ public static class TargetMoney
     
     public static void addInflation()
     {
-        targetMoney = targetMoney + Mathf.CeilToInt(targetMoney * inflation);
+        targetMoney = targetMoney + Mathf.CeilToInt(targetMoney * inflation/12);
         newMounth();
 
 
@@ -131,6 +139,9 @@ public static class TargetMoney
 
     public static void newMounth()
     {
+        UpdateDataBase();
+        date++;
+        pD.data = date;
         Debug.Log(cash + " cash " + contributions.Count);
         foreach (var contrib in contributions)
         {
@@ -150,6 +161,37 @@ public static class TargetMoney
                 bonds.Remove(bond);
             }
         }
+        if (curentMoney >= targetMoney) PlayerPrefs.SetInt("Finish_game", 1);
+
+    }
+
+    public static void UpdateDataBase()
+    {
+        InvesyingStatus invesying;
+        invesying.data=date;
+        invesying.count = contributions.Count;
+        pD.contribution.Add(invesying);
+        // gos bond
+        invesying.count = GetBondCount(3);
+        pD.Bonds_Gos.Add(invesying);
+
+
+        // muc bond
+        invesying.count = GetBondCount(4);
+        pD.Bonds_Muc.Add(invesying);
+        // kom bond
+        invesying.count = GetBondCount(6);
+        pD.Bonds_Kom.Add(invesying);
+
+        var jsonNewUser = JsonConvert.SerializeObject(pD);
+        FirebaseDatabase.DefaultInstance.GetReference($"users/{PlayerPrefs.GetString("name")}").SetRawJsonValueAsync(jsonNewUser).ContinueWithOnMainThread(task =>
+        {
+            if (task.IsFaulted || task.IsCanceled)
+            {
+               // print("fail");
+            }
+        }
+        );
     }
 
     public static void NewContribution(float _percent, int _length, int _sum)

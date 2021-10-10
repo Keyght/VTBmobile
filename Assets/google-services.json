@@ -1,41 +1,35 @@
 {
   "project_info": {
-    "project_number": "1020907630814",
-    "project_id": "vtbmobail-496b9",
-    "storage_bucket": "vtbmobail-496b9.appspot.com"
+    "project_number": "173949580108",
+    "firebase_url": "https://test-8265d.firebaseio.com",
+    "project_id": "test-8265d",
+    "storage_bucket": "test-8265d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1020907630814:android:0ed3a53cb53b72d263524f",
+        "mobilesdk_app_id": "1:173949580108:android:cde2e6775d0e729f2495e9",
         "android_client_info": {
           "package_name": "com.RealityDream.VTBmobile"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1020907630814-nj9dhfabugl9j195emtvoc9ffetp8j52.apps.googleusercontent.com",
+          "client_id": "173949580108-v0h2c7007rqs39jugaj6qgm1p0145f8i.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAk1zJHRLkBsy0t7gNFMZfYjdwJhko7W6E"
+          "current_key": "AIzaSyA5hqINgrxw8CbI1GNLWrhYhsebLkc-L78"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1020907630814-nj9dhfabugl9j195emtvoc9ffetp8j52.apps.googleusercontent.com",
+              "client_id": "173949580108-v0h2c7007rqs39jugaj6qgm1p0145f8i.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "1020907630814-drta2hvg5heof497gvcniv837bkc20g6.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.RealityDream.VTBmobile"
-              }
             }
           ]
         }
