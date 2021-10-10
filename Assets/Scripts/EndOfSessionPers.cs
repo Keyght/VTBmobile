@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class EndSession : MonoBehaviour
+public class EndOfSessionPers : MonoBehaviour
 {
     public GameObject FinishCanvas;
     public GameObject FinishCanvasGood;
@@ -18,7 +18,7 @@ public class EndSession : MonoBehaviour
     private GameObject[] moneys;
 
     public float timerValue = 0f;
-   // public float month;
+    // public float month;
     //public float years;
 
     public bool isGameFinished;
@@ -26,7 +26,7 @@ public class EndSession : MonoBehaviour
     public Text TextCounter;
     public int previos_money;
 
-    public int moneyGet_K=200;
+    public int moneyGet_K = 200;
 
     void Update()
     {
@@ -36,7 +36,8 @@ public class EndSession : MonoBehaviour
     {
         int num;
         bool isNum = int.TryParse(PlayerPrefs.GetString("Money"), out num);
-        if (!isNum) {
+        if (!isNum)
+        {
             PlayerPrefs.SetInt("Money", 0);
             Debug.Log(PlayerPrefs.GetInt("Money"));
         }
@@ -59,7 +60,7 @@ public class EndSession : MonoBehaviour
             //month = timerValue % 12;
             //years = timerValue / 12;
             TimerText.text = "Время прохождения: " + FormatTime(timerValue);
-            TextCounter.text = "Количество заработанных монет: " + (PlayerPrefs.GetInt("Money")-previos_money);
+            TextCounter.text = "Количество заработанных монет: " + (PlayerPrefs.GetInt("Money") - previos_money);
             StartCoroutine(OpenInterfaceScreen(3));
             Debug.Log("Hit");
         }
@@ -69,10 +70,20 @@ public class EndSession : MonoBehaviour
             //oldmoney = GameObject.Find(collision.gameObject.name);
             //oldmoney.SetActive(false);
             collision.gameObject.SetActive(false);
-            int k = PlayerPrefs.GetInt("Money")+1;
+            int k = PlayerPrefs.GetInt("Money") + 1;
             PlayerPrefs.SetInt("Money", k);
             Debug.Log(PlayerPrefs.GetInt("Money"));
-            AddSpeed();
+            cureMoneyCount = cureMoneyCount - 1;
+            if (cureMoneyCount <= 0)
+            {
+                cureMoneyCount = moneyCount;
+                foreach (var money in moneys)
+                {
+                    money.SetActive(true);
+                }
+               
+            }
+
         }
         if (collision.gameObject.name == "EndCylindr")
         {
@@ -86,15 +97,14 @@ public class EndSession : MonoBehaviour
             StartCoroutine(OpenInterfaceScreen(3));
         }
 
-        
+
     }
     IEnumerator OpenInterfaceScreen(float time)
     {
-        
+
         yield return new WaitForSeconds(time);
 
         SceneManager.LoadScene("FirstMenu");
-        AddMoney();
     }
 
     void UpdateTimer()
@@ -126,18 +136,5 @@ public class EndSession : MonoBehaviour
     }
 
 
-    void AddSpeed()
-    {
-        GetComponent<MooveTheBall>().AddSpeed();
-        cureMoneyCount = cureMoneyCount - 1;
-        if (cureMoneyCount <= 0)
-        {
-            cureMoneyCount = moneyCount;
-            foreach (var money in moneys)
-            {
-                money.SetActive(true);
-            }
-            GetComponent<Collider>().material.bounciness = GetComponent<Collider>().material.bounciness + 0.1f;
-        }
-    }
+    
 }
